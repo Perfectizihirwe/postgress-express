@@ -1,0 +1,32 @@
+{
+  "name": "ihuzoapihubtest",
+  "version": "1.0.0",
+  "description": "This repository is for testing ihuzo api integration idea",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel server.js -d dist",
+    "start": "npm run build && node dist/server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perfectizihirwe/ihuzoapihubtest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Perfectizihirwe/ihuzoapihubtest/issues"
+  },
+  "homepage": "https://github.com/Perfectizihirwe/ihuzoapihubtest#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
