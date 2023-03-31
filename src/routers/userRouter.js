@@ -1,19 +1,12 @@
 import express from "express";
-import * as models from "../database/models/index.js";
+import * as Models from "../database/models";
+import { validateRegistration, existingUser } from "../middleware";
+import { registerUser } from "../controllers";
 export const userRouter = express.Router();
 
-userRouter.post("/addUser", async (req, res) => {
-  const data = {
-    firstName: "Sostene",
-    lastName: "Niyonkuru",
-    apiKey: "123456789",
-  };
-
-  const user = await models.User.create(data);
-  return res.status(201).json(user);
-});
+userRouter.post("/register", validateRegistration, existingUser, registerUser);
 
 userRouter.get("/allUsers", async (req, res) => {
-  const users = await models.User.findAll();
+  const users = await Models.User.findAll();
   return res.status(200).json(users);
 });

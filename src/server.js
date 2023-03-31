@@ -1,14 +1,18 @@
 import express from "express";
 import { userRouter } from "./routers/index.js";
-import  {sequelize}  from "./database/models/index.js";
+import { sequelize } from "./database/models/index.js";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+app.get("/", (res) => {
   res.send("IHUZO WORKING");
 });
 
-app.use("/user", userRouter);
+app.use("/api/user", userRouter);
 
 const connectDb = async () => {
   try {
