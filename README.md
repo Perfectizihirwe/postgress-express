@@ -1,2 +1,2 @@
-# ihuzoapihubtest
-This repository is for testing ihuzo api integration idea
+# Postgress
+This repository is a backend app with postgress
